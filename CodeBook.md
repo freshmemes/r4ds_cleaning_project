@@ -32,18 +32,18 @@ In more detail, `run_analysis.R` performs the transformations as outlined below.
 
 4. Horizontally merged the `y`, `X`, and `subject` data frames into one master data frame called `df`.
 
-5. Gathered the 561 `X` columns as their values each correspond to a statistic aka "feature."
+5. Renamed the `y` column to `activity` and recoded the factors (numbers 1-6) with the corresponding activity labels provided by `dataset/activity_labels.txt`.
 
-5. Added a `feature` column to denote which statistic was represented by each observation.
+6. Gathered the 561 `X` columns as their values each correspond to a statistic aka "feature", resulting in the `feature` column to denote which statistic was represented by each observation.
 
-6. Turned the `subject`, `activity`, and `feature` columns into factors as they have a limited number of levels (30, 6, and 561, respectively).
+7. At this point, the `subject`, `activity`, and `feature` columns have all been turned into factors as they have a limited number of levels (30, 6, and 561, respectively).
 
-7. Separated the raw values from `features.txt` into two columns so as to create a lookup map, with each number from `1` to `561` corresponding to the name of its statistic.
+8. Separated the raw values from `features.txt` into two columns so as to create a lookup map, with each number from `1` to `561` corresponding to the name of its statistic.
 
-8. Replaced the numbers in `df$feature` with the corresponding names, calling this newly modified version of the data frame `df2`.
+9. Replaced the numbers in `df$feature` with the corresponding names, calling this newly modified version of the data frame `df2`.
 
-9. Filtered `df2` to only contain observations for which `feature` contained the expressions `mean` and `std`.
+10. Filtered `df2` to only contain observations for which `feature` contained the expressions `mean` and `std`.
 
-10. Summarized the data set, grouping by each subject, activity, and feature, to show the average of each feature. Stored this in a new data frame `df3`.
+11. Summarized the data set, grouping by each subject, activity, and feature, to show the average of each feature. Stored this in a new data frame `df3`.
 
-11. Wrote `df3` to `results.csv`.
+12. Wrote `df3` to `results.csv`.
