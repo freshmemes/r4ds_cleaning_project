@@ -50,3 +50,6 @@ df2 <- df %>%
 df3 <- df2 %>% 
   group_by(subject, activity, feature) %>% 
   summarize(average = mean(value, na.rm = T))
+
+# write df3 to a csv file called "results"
+write_csv(df3, "results.csv")
