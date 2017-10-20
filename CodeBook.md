@@ -46,4 +46,4 @@ In more detail, `run_analysis.R` performs the transformations as outlined below.
 
 11. Summarized the data set, grouping by each subject, activity, and feature, to show the average of each feature. Stored this in a new data frame `df3`.
 
-12. Wrote `df3` to `results.csv`.
+12. Wrote `df3` to `results.txt`.
